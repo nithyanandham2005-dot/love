@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Photo Slider ❤️</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    flex-direction:column;
+}
+
+/* Image Style */
+#photo{
+    width:717px;
+    height:1600px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* Button Style */
+button{
+    margin-top:20px;
+    padding:12px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:red;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:darkred;
+}
+</style>
+</head>
+
+<body>
+
+<img id="photo" src="photo1.jpeg">
+
+<button onclick="nextImage()">Next ➜</button>
+
+<script>
+let images = [
+    "photo1.jpeg",
+    "photo2.jpeg",
+    "photo3.jpeg",
+    "photo4.jpeg",
+    "photo5.jpeg",
+    "photo6.jpeg",
+    "photo7.jpeg",
+    "8.jpeg",
+    "photo9.jpeg",
+    "photo10.jpeg"
+];
+
+let current = 0;
+
+function nextImage(){
+    current++;
+    if(current >= images.length){
+        current = 0; // restart from first
+    }
+    document.getElementById("photo").src = images[current];
+}
+</script>
+
+</body>
+</html>
